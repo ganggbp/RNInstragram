@@ -8,8 +8,11 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
-import styles from './styles';
 import Comment from '../Comment';
+import DoublePressable from '../DoublePressable';
+import Carousel from '../Carousel';
+
+import styles from './styles';
 import { IPost } from '../../types/models';
 
 interface IFeedPost {
@@ -28,15 +31,21 @@ const FeedPost = ({ post }: IFeedPost) => {
 		setIsLiked((v) => !v);
 	};
 
-	let lastTap = 0;
-	const handleDoublePress = () => {
-		const now = Date.now(); //return -> timestamp 354354967 (number of sec)
-		if (now - lastTap < 300) {
-			toggleLike();
-		}
-
-		lastTap = now;
-	};
+	let content = null;
+	if (post.image) {
+		content = (
+			<DoublePressable onDoublePress={toggleLike}>
+				<Image
+					source={{
+						uri: post.image
+					}}
+					style={styles.image}
+				/>
+			</DoublePressable>
+		);
+	} else if (post.images) {
+		content = <Carousel images={post.images} onDoublePress={toggleLike} />;
+	}
 
 	return (
 		<View style={styles.post}>
@@ -56,14 +65,7 @@ const FeedPost = ({ post }: IFeedPost) => {
 				/>
 			</View>
 			{/* Content */}
-			<Pressable onPress={handleDoublePress}>
-				<Image
-					source={{
-						uri: post.image
-					}}
-					style={styles.image}
-				/>
-			</Pressable>
+			{content}
 
 			{/* Footer */}
 			<View style={styles.footer}>
