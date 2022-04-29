@@ -24,6 +24,7 @@ const Carousel = ({ images, onDoublePress = () => {} }: ICarousel) => {
 		itemVisiblePercentThreshold: 51
 	};
 
+	// useful ex in tiktok stop playing video when item changed
 	const onViewableItemsChanged = useRef(
 		({ viewableItems }: { viewableItems: Array<ViewToken> }) => {
 			if (viewableItems.length > 0) {

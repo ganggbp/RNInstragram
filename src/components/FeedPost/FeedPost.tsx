@@ -11,6 +11,7 @@ import fonts from '../../theme/fonts';
 import Comment from '../Comment';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
+import VideoPlayer from '../VideoPlayer';
 
 import styles from './styles';
 import { IPost } from '../../types/models';
@@ -45,6 +46,12 @@ const FeedPost = ({ post }: IFeedPost) => {
 		);
 	} else if (post.images) {
 		content = <Carousel images={post.images} onDoublePress={toggleLike} />;
+	} else if (post.video) {
+		content = (
+			<DoublePressable onDoublePress={toggleLike}>
+				<VideoPlayer uri={post.video} />
+			</DoublePressable>
+		);
 	}
 
 	return (
