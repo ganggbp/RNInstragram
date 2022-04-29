@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 		aspectRatio: 1
 	},
 	muteButton: {
-		backgroundColor: colors.black,
+		backgroundColor: 'rgba(0,0,0,0.5)',
 		padding: 5,
 		position: 'absolute',
 		bottom: 10,
