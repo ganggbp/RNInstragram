@@ -14,6 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		918ACE7D904CEAF6F8825629 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */; };
+		B840289766513F44C45B3B5D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +40,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = InstagramPrepTS/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramPrepTS-InstagramPrepTSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-InstagramPrepTS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS.debug.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS.debug.xcconfig"; sourceTree = "<group>"; };
+		4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-InstagramPrepTS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS.release.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-InstagramPrepTS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramPrepTS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InstagramPrepTS/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig"; sourceTree = "<group>"; };
+		B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-InstagramPrepTS/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,14 @@
 			name = InstagramPrepTS;
 			sourceTree = "<group>";
 		};
+		2BE4D9DEF7527636CC2240BF /* InstagramPrepTS */ = {
+			isa = PBXGroup;
+			children = (
+				B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */,
+			);
+			name = InstagramPrepTS;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,14 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47B98A899BFE612BEAF3C4BB /* InstagramPrepTSTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */,
+			);
+			name = InstagramPrepTSTests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -122,6 +142,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				8AD5774692C7EC5854D12871 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -135,6 +156,15 @@
 				00E356EE1AD99517003FC87E /* InstagramPrepTSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8AD5774692C7EC5854D12871 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				2BE4D9DEF7527636CC2240BF /* InstagramPrepTS */,
+				47B98A899BFE612BEAF3C4BB /* InstagramPrepTSTests */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -403,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* InstagramPrepTSTests.m in Sources */,
+				B840289766513F44C45B3B5D /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +443,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				918ACE7D904CEAF6F8825629 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +468,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = InstagramPrepTSTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +492,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = InstagramPrepTSTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -640,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
