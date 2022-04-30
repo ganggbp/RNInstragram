@@ -7,7 +7,7 @@ import {
 	UserProfileRouteProp,
 	MyProfileNavigationProp,
 	MyProfileRouteProp,
-} from '../../navigation/type';
+} from '../../types/navigation';
 
 import user from '../../assets/data/user.json';
 import FeedGridView from '../../components/FeedGridView';

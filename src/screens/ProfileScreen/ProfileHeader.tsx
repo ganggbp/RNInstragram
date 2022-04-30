@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import { ProfileNavigatorParamList } from '../../navigation/type';
+import { ProfileNavigatorParamList } from '../../types/navigation';
 import { Auth } from 'aws-amplify';
 
 import user from '../../assets/data/user.json';

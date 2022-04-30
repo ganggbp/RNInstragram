@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 import { useNavigation } from '@react-navigation/native';
-import { FeedNavigationProp } from '../../navigation/type';
+import { FeedNavigationProp } from '../../types/navigation';
 
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';

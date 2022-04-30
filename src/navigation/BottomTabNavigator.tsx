@@ -10,7 +10,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
 
-import { BottomTabNavigatorParamList } from './type';
+import { BottomTabNavigatorParamList } from '../types/navigation';
 
 import colors from '../theme/colors';
 import SearchTabNavigator from './SearchTabNavigator';
