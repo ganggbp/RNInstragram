@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
 
 import { useForm, Controller, Control } from 'react-hook-form';
+import {
+	Asset,
+	launchCamera,
+	launchImageLibrary,
+} from 'react-native-image-picker';
 
 import user from '../../assets/data/user.json';
 import colors from '../../theme/colors';
@@ -68,6 +73,7 @@ const CustomInput = ({
 };
 
 const EditProfileScreen = () => {
+	const [selectedPhoto, setSelectedPhoto] = useState<null | Asset>(null);
 	const {
 		control,
 		handleSubmit,
@@ -85,10 +91,26 @@ const EditProfileScreen = () => {
 		console.log('submit', data);
 	};
 
+	const onChangePhoto = () => {
+		launchImageLibrary(
+			{ mediaType: 'photo' },
+			({ didCancel, errorCode, errorMessage, assets }) => {
+				if (!didCancel && !errorCode && assets && assets.length > 0) {
+					setSelectedPhoto(assets[0]);
+				}
+			},
+		);
+	};
+
 	return (
 		<View style={styles.page}>
-			<Image source={{ uri: user.image }} style={styles.avatar} />
-			<Text style={styles.textButton}>Change Profile photo</Text>
+			<Image
+				source={{ uri: selectedPhoto?.uri || user.image }}
+				style={styles.avatar}
+			/>
+			<Text style={styles.textButton} onPress={onChangePhoto}>
+				Change Profile photo
+			</Text>
 
 			<CustomInput
 				name="name"
