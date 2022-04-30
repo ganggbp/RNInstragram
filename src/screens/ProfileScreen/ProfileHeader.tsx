@@ -3,6 +3,7 @@ import { View, Text, Image } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { ProfileNavigatorParamList } from '../../navigation/type';
+import { Auth } from 'aws-amplify';
 
 import user from '../../assets/data/user.json';
 import Button from '../../components/Button';
@@ -43,12 +44,7 @@ const ProfileHeader = () => {
 						navigation.navigate('Edit Profile');
 					}}
 				/>
-				<Button
-					text="Go back"
-					onPress={() => {
-						navigation.goBack();
-					}}
-				/>
+				<Button text="SignOut" onPress={() => Auth.signOut()} />
 			</View>
 		</View>
 	);
