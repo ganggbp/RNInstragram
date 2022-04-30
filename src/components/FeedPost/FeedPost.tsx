@@ -6,6 +6,9 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
+import { useNavigation } from '@react-navigation/native';
+import { FeedNavigationProp } from '../../navigation/type';
+
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 import Comment from '../Comment';
@@ -21,9 +24,22 @@ interface IFeedPost {
 	isVisible: boolean;
 }
 
-const FeedPost = ({ post, isVisible }: IFeedPost) => {
+const FeedPost = (props: IFeedPost) => {
+	const { post, isVisible = false } = props;
+
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 	const [isLiked, setIsLiked] = useState(false);
+	const navigation = useNavigation<FeedNavigationProp>();
+
+	const navigateToUser = () => {
+		navigation.navigate('UserProfile', {
+			userId: post.user.id,
+		});
+	};
+
+	const navigateToComments = () => {
+		navigation.navigate('Comments', { postId: post.id });
+	};
 
 	const toggleDescriptionExpanded = () => {
 		setIsDescriptionExpanded((prev) => !prev);
@@ -39,7 +55,7 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
 			<DoublePressable onDoublePress={toggleLike}>
 				<Image
 					source={{
-						uri: post.image
+						uri: post.image,
 					}}
 					style={styles.image}
 				/>
@@ -61,11 +77,13 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
 			<View style={styles.header}>
 				<Image
 					source={{
-						uri: post.user.image
+						uri: post.user.image,
 					}}
 					style={styles.userAvatar}
 				/>
-				<Text style={styles.userName}>{post.user.username}</Text>
+				<Text onPress={navigateToUser} style={styles.userName}>
+					{post.user.username}
+				</Text>
 				<Entypo
 					name="dots-three-horizontal"
 					size={16}
@@ -123,7 +141,9 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
 				</Text>
 
 				{/* Comments */}
-				<Text>View all {post.nofComments} comments</Text>
+				<Text onPress={navigateToComments}>
+					View all {post.nofComments} comments
+				</Text>
 				{post.comments.map((comment) => (
 					<Comment key={comment.id} comment={comment} />
 				))}
