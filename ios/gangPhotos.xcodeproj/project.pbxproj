@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* InstagramPrepTSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* InstagramPrepTSTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-InstagramPrepTS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-InstagramPrepTS.a */; };
+		00E356F31AD99517003FC87E /* gangPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* gangPhotosTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-gangPhotos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-gangPhotos.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-gangPhotos-gangPhotosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-gangPhotos-gangPhotosTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		918ACE7D904CEAF6F8825629 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */; };
 		B840289766513F44C45B3B5D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */; };
@@ -24,29 +24,29 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = InstagramPrepTS;
+			remoteInfo = gangPhotos;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* InstagramPrepTSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramPrepTSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* gangPhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gangPhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* InstagramPrepTSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramPrepTSTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* InstagramPrepTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramPrepTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = InstagramPrepTS/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = InstagramPrepTS/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = InstagramPrepTS/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = InstagramPrepTS/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = InstagramPrepTS/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramPrepTS-InstagramPrepTSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-InstagramPrepTS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS.debug.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS.debug.xcconfig"; sourceTree = "<group>"; };
-		4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-InstagramPrepTS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS.release.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-InstagramPrepTS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramPrepTS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InstagramPrepTS/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig"; sourceTree = "<group>"; };
-		B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-InstagramPrepTS/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* gangPhotosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gangPhotosTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* gangPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gangPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gangPhotos/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = gangPhotos/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = gangPhotos/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = gangPhotos/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = gangPhotos/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-gangPhotos-gangPhotosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gangPhotos-gangPhotosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-gangPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gangPhotos.debug.xcconfig"; path = "Target Support Files/Pods-gangPhotos/Pods-gangPhotos.debug.xcconfig"; sourceTree = "<group>"; };
+		4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-gangPhotos-gangPhotosTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-gangPhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gangPhotos.release.xcconfig"; path = "Target Support Files/Pods-gangPhotos/Pods-gangPhotos.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-gangPhotos-gangPhotosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gangPhotos-gangPhotosTests.debug.xcconfig"; path = "Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-gangPhotos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gangPhotos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gangPhotos/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-gangPhotos-gangPhotosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gangPhotos-gangPhotosTests.release.xcconfig"; path = "Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests.release.xcconfig"; sourceTree = "<group>"; };
+		B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-gangPhotos/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-gangPhotos-gangPhotosTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,20 +63,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-InstagramPrepTS.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-gangPhotos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* InstagramPrepTSTests */ = {
+		00E356EF1AD99517003FC87E /* gangPhotosTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* InstagramPrepTSTests.m */,
+				00E356F21AD99517003FC87E /* gangPhotosTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = InstagramPrepTSTests;
+			path = gangPhotosTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -87,7 +87,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* InstagramPrepTS */ = {
+		13B07FAE1A68108700A75B9A /* gangPhotos */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -97,33 +97,33 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = InstagramPrepTS;
+			name = gangPhotos;
 			sourceTree = "<group>";
 		};
-		2BE4D9DEF7527636CC2240BF /* InstagramPrepTS */ = {
+		2BE4D9DEF7527636CC2240BF /* gangPhotos */ = {
 			isa = PBXGroup;
 			children = (
 				B584350A9E074B3B9758135D /* ExpoModulesProvider.swift */,
 			);
-			name = InstagramPrepTS;
+			name = gangPhotos;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-InstagramPrepTS.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-InstagramPrepTS-InstagramPrepTSTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-gangPhotos.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-gangPhotos-gangPhotosTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		47B98A899BFE612BEAF3C4BB /* InstagramPrepTSTests */ = {
+		47B98A899BFE612BEAF3C4BB /* gangPhotosTests */ = {
 			isa = PBXGroup;
 			children = (
 				4C96B0CC12DCF804C732C393 /* ExpoModulesProvider.swift */,
 			);
-			name = InstagramPrepTSTests;
+			name = gangPhotosTests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -136,9 +136,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* InstagramPrepTS */,
+				13B07FAE1A68108700A75B9A /* gangPhotos */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* InstagramPrepTSTests */,
+				00E356EF1AD99517003FC87E /* gangPhotosTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -152,8 +152,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* InstagramPrepTS.app */,
-				00E356EE1AD99517003FC87E /* InstagramPrepTSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* gangPhotos.app */,
+				00E356EE1AD99517003FC87E /* gangPhotosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,8 +161,8 @@
 		8AD5774692C7EC5854D12871 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				2BE4D9DEF7527636CC2240BF /* InstagramPrepTS */,
-				47B98A899BFE612BEAF3C4BB /* InstagramPrepTSTests */,
+				2BE4D9DEF7527636CC2240BF /* gangPhotos */,
+				47B98A899BFE612BEAF3C4BB /* gangPhotosTests */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
@@ -170,10 +170,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-InstagramPrepTS.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-InstagramPrepTS.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-gangPhotos.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-gangPhotos.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-gangPhotos-gangPhotosTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-gangPhotos-gangPhotosTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* InstagramPrepTSTests */ = {
+		00E356ED1AD99517003FC87E /* gangPhotosTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "InstagramPrepTSTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "gangPhotosTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -197,14 +197,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = InstagramPrepTSTests;
-			productName = InstagramPrepTSTests;
-			productReference = 00E356EE1AD99517003FC87E /* InstagramPrepTSTests.xctest */;
+			name = gangPhotosTests;
+			productName = gangPhotosTests;
+			productReference = 00E356EE1AD99517003FC87E /* gangPhotosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* InstagramPrepTS */ = {
+		13B07F861A680F5B00A75B9A /* gangPhotos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "InstagramPrepTS" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "gangPhotos" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -219,9 +219,9 @@
 			);
 			dependencies = (
 			);
-			name = InstagramPrepTS;
-			productName = InstagramPrepTS;
-			productReference = 13B07F961A680F5B00A75B9A /* InstagramPrepTS.app */;
+			name = gangPhotos;
+			productName = gangPhotos;
+			productReference = 13B07F961A680F5B00A75B9A /* gangPhotos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -241,7 +241,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "InstagramPrepTS" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "gangPhotos" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -254,8 +254,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* InstagramPrepTS */,
-				00E356ED1AD99517003FC87E /* InstagramPrepTSTests */,
+				13B07F861A680F5B00A75B9A /* gangPhotos */,
+				00E356ED1AD99517003FC87E /* gangPhotosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,15 +300,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -326,7 +326,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InstagramPrepTS-InstagramPrepTSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-gangPhotos-gangPhotosTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,7 +348,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InstagramPrepTS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-gangPhotos-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -361,15 +361,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -378,15 +378,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS/Pods-InstagramPrepTS-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gangPhotos/Pods-gangPhotos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -395,15 +395,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstagramPrepTS-InstagramPrepTSTests/Pods-InstagramPrepTS-InstagramPrepTSTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gangPhotos-gangPhotosTests/Pods-gangPhotos-gangPhotosTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* InstagramPrepTSTests.m in Sources */,
+				00E356F31AD99517003FC87E /* gangPhotosTests.m in Sources */,
 				B840289766513F44C45B3B5D /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +452,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* InstagramPrepTS */;
+			target = 13B07F861A680F5B00A75B9A /* gangPhotos */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,14 +460,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-InstagramPrepTS-InstagramPrepTSTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-gangPhotos-gangPhotosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InstagramPrepTSTests/Info.plist;
+				INFOPLIST_FILE = gangPhotosTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,17 +481,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstagramPrepTS.app/InstagramPrepTS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gangPhotos.app/gangPhotos";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-InstagramPrepTS-InstagramPrepTSTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-gangPhotos-gangPhotosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = InstagramPrepTSTests/Info.plist;
+				INFOPLIST_FILE = gangPhotosTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,19 +505,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstagramPrepTS.app/InstagramPrepTS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gangPhotos.app/gangPhotos";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-InstagramPrepTS.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-gangPhotos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = InstagramPrepTS/Info.plist;
+				INFOPLIST_FILE = gangPhotos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,8 +527,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = InstagramPrepTS;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gang.photos;
+				PRODUCT_NAME = gangPhotos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -537,12 +537,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-InstagramPrepTS.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-gangPhotos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = InstagramPrepTS/Info.plist;
+				INFOPLIST_FILE = gangPhotos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,8 +552,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = InstagramPrepTS;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gang.photos;
+				PRODUCT_NAME = gangPhotos;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -697,7 +697,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "InstagramPrepTSTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "gangPhotosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -706,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "InstagramPrepTS" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "gangPhotos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -715,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "InstagramPrepTS" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "gangPhotos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

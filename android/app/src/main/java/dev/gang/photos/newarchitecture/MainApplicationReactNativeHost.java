@@ -1,4 +1,4 @@
-package com.instagramprepts.newarchitecture;
+package dev.gang.photos.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.instagramprepts.BuildConfig;
-import com.instagramprepts.newarchitecture.components.MainComponentsRegistry;
-import com.instagramprepts.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import dev.gang.photos.BuildConfig;
+import dev.gang.photos.newarchitecture.components.MainComponentsRegistry;
+import dev.gang.photos.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
