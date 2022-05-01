@@ -5,7 +5,17 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
 import AuthContextProvider from './src/context/AuthContext';
 
-Amplify.configure(awsconfig);
+// in case that have to config Amplify
+const updatedConfig = {
+	...awsconfig,
+	oauth: {
+		...awsconfig.oauth,
+		redirectSignIn: 'gangphotos://',
+		redirectSignOut: 'gangphotos://',
+	},
+};
+
+Amplify.configure(updatedConfig);
 
 const App = () => {
 	return (

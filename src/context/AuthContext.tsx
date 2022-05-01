@@ -16,31 +16,29 @@ type UserType = CognitoUser | null | undefined;
 
 type AuthContextType = {
 	user: UserType;
-	setUser: Dispatch<SetStateAction<UserType>>;
 };
 
 const AuthContext = createContext<AuthContextType>({
 	user: undefined,
-	setUser: () => {},
 }); // {Provider, Consumer} ,,, default value
 
 //actual value provide to provider
 const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const [user, setUser] = useState<UserType>(undefined);
 
+	const checkUser = async () => {
+		try {
+			const authUser = await Auth.currentAuthenticatedUser({
+				bypassCache: true,
+			}); //get data by request to cognito server
+
+			setUser(authUser);
+		} catch (e) {
+			setUser(null);
+		}
+	};
+
 	useEffect(() => {
-		const checkUser = async () => {
-			try {
-				const authUser = await Auth.currentAuthenticatedUser({
-					bypassCache: true,
-				}); //get data by request to cognito server
-
-				setUser(authUser);
-			} catch (e) {
-				setUser(null);
-			}
-		};
-
 		checkUser();
 	}, []);
 
@@ -50,6 +48,9 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 			if (event === 'signOut') {
 				setUser(null);
 			}
+			if (event === 'signIn') {
+				checkUser();
+			}
 		};
 		Hub.listen('auth', listener); //เพิ่ม listener ให้ track ดู auth events ใน HUB
 
@@ -57,9 +58,7 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	}, []);
 
 	return (
-		<AuthContext.Provider value={{ user, setUser }}>
-			{children}
-		</AuthContext.Provider>
+		<AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
 	);
 };
 
