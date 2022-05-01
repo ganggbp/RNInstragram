@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { useAuthContext } from '../../../context/AuthContext';
 
 type SignInData = {
-	username: string;
+	email: string;
 	password: string;
 };
 
@@ -30,20 +30,20 @@ const SignInScreen = () => {
 
 	const { control, handleSubmit, reset } = useForm<SignInData>();
 
-	const onSignInPressed = async ({ username, password }: SignInData) => {
+	const onSignInPressed = async ({ email, password }: SignInData) => {
 		if (loading) {
 			return;
 		}
 		setLoading(true);
 
 		try {
-			const cognitoUser = await Auth.signIn(username, password);
+			const cognitoUser = await Auth.signIn(email, password);
 
 			//TODO save user data in context
 			setUser(cognitoUser);
 		} catch (e) {
 			if ((e as Error).name === 'UserNotConfirmedException') {
-				navigation.navigate('Confirm email', { username });
+				navigation.navigate('Confirm email', { email });
 			} else {
 				Alert.alert('Ooops', (e as Error).message);
 			}
@@ -71,10 +71,10 @@ const SignInScreen = () => {
 				/>
 
 				<FormInput
-					name="username"
-					placeholder="Username"
+					name="email"
+					placeholder="Email"
 					control={control}
-					rules={{ required: 'Username is required' }}
+					rules={{ required: 'Email is required' }}
 				/>
 
 				<FormInput
