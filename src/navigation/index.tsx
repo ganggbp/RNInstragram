@@ -8,6 +8,8 @@ import CommentScreen from '../screens/CommentScreen/CommentScreen';
 
 import { RootNavigatorParamList } from '../types/navigation';
 import AuthStackNavigator from './AuthStackNavigator';
+import { useAuthContext } from '../context/AuthContext';
+import { ActivityIndicator, View } from 'react-native';
 
 const Stack = createNativeStackNavigator<RootNavigatorParamList>(); // { Navigator, Screen }
 
@@ -33,24 +35,35 @@ const linking: LinkingOptions<RootNavigatorParamList> = {
 };
 
 const Navigation = () => {
+	const { user } = useAuthContext();
+
+	if (user === undefined) {
+		return (
+			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+				<ActivityIndicator />
+			</View>
+		);
+	}
+
 	return (
 		<NavigationContainer linking={linking}>
-			<Stack.Navigator
-				initialRouteName="Auth"
-				screenOptions={{ headerShown: true }}
-			>
-				<Stack.Screen
-					name="Auth"
-					component={AuthStackNavigator}
-					options={{ headerShown: false }}
-				/>
-				<Stack.Screen
-					name="Home"
-					component={BottomTabNavigator}
-					options={{ headerShown: false }}
-				/>
-
-				<Stack.Screen name="Comments" component={CommentScreen} />
+			<Stack.Navigator screenOptions={{ headerShown: true }}>
+				{!user ? (
+					<Stack.Screen
+						name="Auth"
+						component={AuthStackNavigator}
+						options={{ headerShown: false }}
+					/>
+				) : (
+					<>
+						<Stack.Screen
+							name="Home"
+							component={BottomTabNavigator}
+							options={{ headerShown: false }}
+						/>
+						<Stack.Screen name="Comments" component={CommentScreen} />
+					</>
+				)}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
