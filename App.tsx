@@ -6,6 +6,7 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import AuthContextProvider from './src/context/AuthContext';
+import Client from './src/apollo/Client';
 
 // in case that have to config Amplify
 
@@ -39,7 +40,9 @@ const App = () => {
 	return (
 		<SafeAreaProvider>
 			<AuthContextProvider>
-				<Navigation />
+				<Client>
+					<Navigation />
+				</Client>
 			</AuthContextProvider>
 		</SafeAreaProvider>
 	);

@@ -10,6 +10,7 @@ import {
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../../theme/colors';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 const flashModes = [
 	FlashMode.off,
@@ -109,6 +110,17 @@ const PostUploadScreen = () => {
 		}
 	};
 
+	const openImageGallery = () => {
+		launchImageLibrary(
+			{ mediaType: 'photo' },
+			({ didCancel, errorCode, errorMessage, assets }) => {
+				if (!didCancel && !errorCode && assets && assets.length > 0) {
+					console.log(assets);
+				}
+			},
+		);
+	};
+
 	if (hasPermission === null) {
 		return <Text>Loading...</Text>;
 	}
@@ -141,7 +153,9 @@ const PostUploadScreen = () => {
 			</View>
 
 			<View style={[styles.buttonContainer, { bottom: 25 }]}>
-				<MaterialIcons name="photo-library" size={30} color={colors.white} />
+				<Pressable onPress={openImageGallery}>
+					<MaterialIcons name="photo-library" size={30} color={colors.white} />
+				</Pressable>
 
 				{isCameraReady && (
 					<Pressable

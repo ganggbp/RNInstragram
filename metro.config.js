@@ -5,6 +5,8 @@
  * @format
  */
 const exclusionList = require('metro-config/src/defaults/exclusionList');
+const { getDefaultConfig } = require('metro-config');
+const { resolver: defaultResolver } = getDefaultConfig.getDefaultValues();
 
 module.exports = {
 	transformer: {
@@ -17,5 +19,6 @@ module.exports = {
 	},
 	resolver: {
 		blacklistRE: exclusionList([/#current-cloud-backend\/.*/]),
+		sourceExts: [...defaultResolver.sourceExts, 'cjs'],
 	},
 };

@@ -20,7 +20,7 @@ const ProfileScreen = () => {
 	>();
 
 	const userId = route.params?.userId;
-	console.warn(userId);
+	// console.warn(userId);
 	// query the user with userID
 
 	return <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />;

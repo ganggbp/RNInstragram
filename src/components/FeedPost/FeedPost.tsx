@@ -17,10 +17,12 @@ import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
 
 import styles from './styles';
-import { IPost } from '../../types/models';
+import { Post } from '../../API';
+import { DEFAULT_USER_IMAGE } from '../../config';
+// import { IPost } from '../../types/models';
 
 interface IFeedPost {
-	post: IPost;
+	post: Post;
 	isVisible: boolean;
 }
 
@@ -32,9 +34,11 @@ const FeedPost = (props: IFeedPost) => {
 	const navigation = useNavigation<FeedNavigationProp>();
 
 	const navigateToUser = () => {
-		navigation.navigate('UserProfile', {
-			userId: post.user.id,
-		});
+		if (post.User) {
+			navigation.navigate('UserProfile', {
+				userId: post.User.id,
+			});
+		}
 	};
 
 	const navigateToComments = () => {
@@ -77,12 +81,12 @@ const FeedPost = (props: IFeedPost) => {
 			<View style={styles.header}>
 				<Image
 					source={{
-						uri: post.user.image,
+						uri: post.User?.image || DEFAULT_USER_IMAGE,
 					}}
 					style={styles.userAvatar}
 				/>
 				<Text onPress={navigateToUser} style={styles.userName}>
-					{post.user.username}
+					{post.User?.username}
 				</Text>
 				<Entypo
 					name="dots-three-horizontal"
@@ -133,7 +137,7 @@ const FeedPost = (props: IFeedPost) => {
 
 				{/* Post description */}
 				<Text style={styles.text} numberOfLines={isDescriptionExpanded ? 0 : 3}>
-					<Text style={styles.bold}>{post.user.username}</Text>{' '}
+					<Text style={styles.bold}>{post.User?.username}</Text>{' '}
 					{post.description}
 				</Text>
 				<Text onPress={toggleDescriptionExpanded}>
@@ -144,9 +148,10 @@ const FeedPost = (props: IFeedPost) => {
 				<Text onPress={navigateToComments}>
 					View all {post.nofComments} comments
 				</Text>
-				{post.comments.map((comment) => (
-					<Comment key={comment.id} comment={comment} />
-				))}
+				{(post.Comments?.items || []).map(
+					(comment) =>
+						comment && <Comment key={comment.id} comment={comment} />,
+				)}
 
 				{/* Posted date */}
 				<Text>{post.createdAt}</Text>
