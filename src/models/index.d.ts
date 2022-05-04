@@ -36,14 +36,14 @@ export declare class User {
   readonly email: string;
   readonly username?: string | null;
   readonly bio?: string | null;
-  readonly websit?: string | null;
-  readonly nofPosts: number;
-  readonly nofFollowings: number;
-  readonly nofFollowers: number;
+  readonly website?: string | null;
   readonly image?: string | null;
+  readonly nofFollowers: number;
+  readonly nofFollowings: number;
   readonly Posts?: (Post | null)[] | null;
   readonly Comments?: (Comment | null)[] | null;
   readonly Likes?: (Like | null)[] | null;
+  readonly nofPosts: number;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<User, UserMetaData>);

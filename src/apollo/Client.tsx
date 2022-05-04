@@ -31,7 +31,7 @@ const link = ApolloLink.from([
 	createSubscriptionHandshakeLink({ url, region, auth }, httpLink), //link of what protocol to communicate
 ]);
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
 	link,
 	cache: new InMemoryCache(), //responsible to all the data locally on device memory, storage
 });

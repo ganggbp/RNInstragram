@@ -7,6 +7,7 @@ import awsconfig from './src/aws-exports';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import AuthContextProvider from './src/context/AuthContext';
 import Client from './src/apollo/Client';
+import { MenuProvider } from 'react-native-popup-menu';
 
 // in case that have to config Amplify
 
@@ -39,11 +40,13 @@ Amplify.configure(updatedConfig);
 const App = () => {
 	return (
 		<SafeAreaProvider>
-			<AuthContextProvider>
-				<Client>
-					<Navigation />
-				</Client>
-			</AuthContextProvider>
+			<MenuProvider>
+				<AuthContextProvider>
+					<Client>
+						<Navigation />
+					</Client>
+				</AuthContextProvider>
+			</MenuProvider>
 		</SafeAreaProvider>
 	);
 };

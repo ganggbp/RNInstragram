@@ -134,15 +134,22 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "websit": {
-                    "name": "websit",
+                "website": {
+                    "name": "website",
                     "isArray": false,
                     "type": "AWSURL",
                     "isRequired": false,
                     "attributes": []
                 },
-                "nofPosts": {
-                    "name": "nofPosts",
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "nofFollowers": {
+                    "name": "nofFollowers",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
@@ -153,20 +160,6 @@ export const schema = {
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
-                    "attributes": []
-                },
-                "nofFollowers": {
-                    "name": "nofFollowers",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "image": {
-                    "name": "image",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
                     "attributes": []
                 },
                 "Posts": {
@@ -211,6 +204,13 @@ export const schema = {
                         "associatedWith": "User"
                     }
                 },
+                "nofPosts": {
+                    "name": "nofPosts",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -234,6 +234,16 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "usersByUsername",
+                        "queryField": "usersByUsername",
+                        "fields": [
+                            "username"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -504,5 +514,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "b3ae7a2ef61ef630ddd01d3f5b00d54a"
+    "version": "98fef4e3d587748107631c8bf02c6b42"
 };

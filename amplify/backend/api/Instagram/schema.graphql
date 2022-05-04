@@ -2,7 +2,6 @@ type Like @model @auth(rules: [{ allow: public }]) {
 	id: ID!
 	userID: ID! @index(name: "byUser")
 	postID: ID! @index(name: "byPost")
-
 	User: User @belongsTo(fields: ["userID"])
 	Post: Post @belongsTo(fields: ["postID"])
 }
@@ -12,7 +11,6 @@ type Comment @model @auth(rules: [{ allow: public }]) {
 	comment: String!
 	userID: ID! @index(name: "byUser")
 	postID: ID! @index(name: "byPost")
-
 	User: User @belongsTo(fields: ["userID"])
 	Post: Post @belongsTo(fields: ["postID"])
 }
@@ -36,13 +34,17 @@ type User @model @auth(rules: [{ allow: public }]) {
 	name: String!
 	email: String!
 	username: String
+		@index(name: "usersByUsername", queryField: "usersByUsername")
 	bio: String
-	websit: AWSURL
-	nofPosts: Int!
-	nofFollowings: Int!
-	nofFollowers: Int!
+	website: AWSURL
 	image: String
+	nofFollowers: Int!
+	nofFollowings: Int!
 	Posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
 	Comments: [Comment] @hasMany(indexName: "byUser", fields: ["id"])
 	Likes: [Like] @hasMany(indexName: "byUser", fields: ["id"])
+	nofPosts: Int!
 }
+
+# add @index for create a global secondary index to increase performance when filter
+# when provided queryField amplify will generate this query in graphql queries

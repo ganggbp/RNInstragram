@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
+import { User } from '../../API';
+import { DEFAULT_USER_IMAGE } from '../../config';
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
-import { IUser } from '../../types/models';
 
 interface IUserListItem {
-	user: IUser;
+	user: User;
 }
 
 const UserListItem = ({ user }: IUserListItem) => {
@@ -18,7 +19,10 @@ const UserListItem = ({ user }: IUserListItem) => {
 	return (
 		<Pressable onPress={goToScreen}>
 			<View style={styles.root}>
-				<Image source={{ uri: user.image }} style={styles.image} />
+				<Image
+					source={{ uri: user.image || DEFAULT_USER_IMAGE }}
+					style={styles.image}
+				/>
 
 				<View>
 					<Text style={styles.name}>{user.name}</Text>

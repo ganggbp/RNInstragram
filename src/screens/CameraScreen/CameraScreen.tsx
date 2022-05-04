@@ -11,6 +11,8 @@ import {
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../../theme/colors';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { useNavigation } from '@react-navigation/native';
+import { CameraNavigationProp } from '../../types/navigation';
 
 const flashModes = [
 	FlashMode.off,
@@ -26,7 +28,7 @@ const flashModeToIcon = {
 	[FlashMode.torch]: 'highlight',
 };
 
-const PostUploadScreen = () => {
+const CameraScreen = () => {
 	const [hasPermission, setHasPermission] = useState<boolean | null>(null);
 	const [cameraType, setCameraType] = useState(Camera.Constants.Type.back);
 	const [flash, setFlash] = useState(FlashMode.off);
@@ -34,6 +36,7 @@ const PostUploadScreen = () => {
 	const [isRecording, setIsRecording] = useState(false);
 
 	const cameraRef = useRef<Camera>(null);
+	const navigation = useNavigation<CameraNavigationProp>();
 
 	useEffect(() => {
 		const getPermission = async () => {
@@ -112,13 +115,30 @@ const PostUploadScreen = () => {
 
 	const openImageGallery = () => {
 		launchImageLibrary(
-			{ mediaType: 'photo' },
+			{ mediaType: 'photo', selectionLimit: 3 },
 			({ didCancel, errorCode, errorMessage, assets }) => {
 				if (!didCancel && !errorCode && assets && assets.length > 0) {
-					console.log(assets);
+					if (assets.length === 1) {
+						navigation.navigate('Create', {
+							image: assets[0].uri,
+						});
+					} else if (assets.length > 1) {
+						navigation.navigate('Create', {
+							images: assets.map((asset) => asset.uri as string),
+						});
+					}
 				}
 			},
 		);
+	};
+
+	const navigateToCreateScreen = () => {
+		navigation.navigate('Create', {
+			images: [
+				'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+				'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
+			],
+		});
 	};
 
 	if (hasPermission === null) {
@@ -180,6 +200,14 @@ const PostUploadScreen = () => {
 						color={colors.white}
 					/>
 				</Pressable>
+
+				<Pressable onPress={navigateToCreateScreen}>
+					<MaterialIcons
+						name="arrow-forward-ios"
+						size={30}
+						color={colors.white}
+					/>
+				</Pressable>
 			</View>
 		</View>
 	);
@@ -211,4 +239,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default PostUploadScreen;
+export default CameraScreen;
