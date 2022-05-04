@@ -318,6 +318,22 @@ export type ModelLikeFilterInput = {
   not?: ModelLikeFilterInput | null,
 };
 
+export type ModelIDKeyConditionInput = {
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
 export type ModelCommentFilterInput = {
   id?: ModelIDInput | null,
   comment?: ModelStringInput | null,
@@ -364,12 +380,6 @@ export type ModelUserConnection = {
   nextToken?: string | null,
   startedAt?: number | null,
 };
-
-export enum ModelSortDirection {
-  ASC = "ASC",
-  DESC = "DESC",
-}
-
 
 export type CreateLikeMutationVariables = {
   input: CreateLikeInput,
@@ -1623,6 +1633,68 @@ export type SyncLikesQueryVariables = {
 
 export type SyncLikesQuery = {
   syncLikes?:  {
+    __typename: "ModelLikeConnection",
+    items:  Array< {
+      __typename: "Like",
+      id: string,
+      userID: string,
+      postID: string,
+      User?:  {
+        __typename: "User",
+        id: string,
+        name: string,
+        email: string,
+        username?: string | null,
+        bio?: string | null,
+        website?: string | null,
+        image?: string | null,
+        nofFollowers: number,
+        nofFollowings: number,
+        nofPosts: number,
+        createdAt: string,
+        updatedAt: string,
+        _version: number,
+        _deleted?: boolean | null,
+        _lastChangedAt: number,
+      } | null,
+      Post?:  {
+        __typename: "Post",
+        id: string,
+        description?: string | null,
+        image?: string | null,
+        images?: Array< string > | null,
+        video?: string | null,
+        nofComments: number,
+        nofLikes: number,
+        userID: string,
+        createdAt: string,
+        updatedAt: string,
+        _version: number,
+        _deleted?: boolean | null,
+        _lastChangedAt: number,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type LikesForPostByUserQueryVariables = {
+  postID: string,
+  userID?: ModelIDKeyConditionInput | null,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelLikeFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type LikesForPostByUserQuery = {
+  likesForPostByUser?:  {
     __typename: "ModelLikeConnection",
     items:  Array< {
       __typename: "Like",

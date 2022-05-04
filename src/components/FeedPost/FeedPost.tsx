@@ -9,7 +9,6 @@ import { useNavigation } from '@react-navigation/native';
 import { FeedNavigationProp } from '../../types/navigation';
 
 import colors from '../../theme/colors';
-import fonts from '../../theme/fonts';
 import Comment from '../Comment';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
@@ -19,6 +18,7 @@ import styles from './styles';
 import { Post } from '../../API';
 import { DEFAULT_USER_IMAGE } from '../../config';
 import PostMenu from './PostMenu';
+import useLikeService from '@services/LikeService';
 
 interface IFeedPost {
 	post: Post;
@@ -27,9 +27,12 @@ interface IFeedPost {
 
 const FeedPost = (props: IFeedPost) => {
 	const { post, isVisible = false } = props;
+	const { isLiked, toggleLike } = useLikeService(post);
 
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-	const [isLiked, setIsLiked] = useState(false);
+
+	const postLikes = post.Likes?.items.filter((like) => !like?._deleted) || [];
+
 	const navigation = useNavigation<FeedNavigationProp>();
 
 	const navigateToUser = () => {
@@ -44,12 +47,12 @@ const FeedPost = (props: IFeedPost) => {
 		navigation.navigate('Comments', { postId: post.id });
 	};
 
-	const toggleDescriptionExpanded = () => {
-		setIsDescriptionExpanded((prev) => !prev);
+	const navigateToLikes = () => {
+		navigation.navigate('PostLikes', { id: post.id });
 	};
 
-	const toggleLike = () => {
-		setIsLiked((v) => !v);
+	const toggleDescriptionExpanded = () => {
+		setIsDescriptionExpanded((prev) => !prev);
 	};
 
 	let content = null;
@@ -126,10 +129,20 @@ const FeedPost = (props: IFeedPost) => {
 				</View>
 
 				{/* Likes */}
-				<Text style={styles.text}>
-					Liked by <Text style={styles.bold}>toonpyb</Text> and{' '}
-					<Text style={styles.bold}>{post.nofLikes} others</Text>
-				</Text>
+				{postLikes.length === 0 ? (
+					<Text>Be the first to like the post</Text>
+				) : (
+					<Text style={styles.text} onPress={navigateToLikes}>
+						Liked by{' '}
+						<Text style={styles.bold}>{postLikes[0]?.User?.username}</Text>
+						{postLikes.length > 1 && (
+							<>
+								{' '}
+								and <Text style={styles.bold}>{post.nofLikes - 1} others</Text>
+							</>
+						)}
+					</Text>
+				)}
 
 				{/* Post description */}
 				<Text style={styles.text} numberOfLines={isDescriptionExpanded ? 0 : 3}>
