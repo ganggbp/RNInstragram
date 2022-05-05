@@ -8,16 +8,22 @@ import {
 } from 'react-native';
 import FeedPost from '../../components/FeedPost';
 import { useQuery } from '@apollo/client'; //gql have annotate graphQL query, useQuery help to run query
-import { listPosts } from './queries';
-import { ListPostsQuery, ListPostsQueryVariables } from '../../API';
+import { postsByDate } from './queries';
+import {
+	ModelSortDirection,
+	PostsByDateQuery,
+	PostsByDateQueryVariables,
+} from '../../API';
 import ApiErrorMessage from '../../components/ApiErrorMessage';
 
 const HomeScreen = () => {
 	const [activePostId, setActivePostId] = useState<string | null>(null);
 	const { data, loading, error, refetch } = useQuery<
-		ListPostsQuery,
-		ListPostsQueryVariables
-	>(listPosts);
+		PostsByDateQuery,
+		PostsByDateQueryVariables
+	>(postsByDate, {
+		variables: { type: 'POST', sortDirection: ModelSortDirection.DESC },
+	});
 
 	const viewabilityConfig: ViewabilityConfig = {
 		itemVisiblePercentThreshold: 51,
@@ -42,7 +48,7 @@ const HomeScreen = () => {
 		);
 	}
 
-	const posts = (data?.listPosts?.items || []).filter(
+	const posts = (data?.postsByDate?.items || []).filter(
 		(post) => !post?._deleted,
 	);
 

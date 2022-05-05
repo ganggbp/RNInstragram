@@ -25,6 +25,7 @@
     "aws-amplify-react-native": "^6.0.4",
     "aws-appsync-auth-link": "^3.0.7",
     "aws-appsync-subscription-link": "^3.0.10",
+    "dayjs": "^1.11.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
