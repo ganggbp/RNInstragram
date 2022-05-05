@@ -47,6 +47,8 @@ export type CreateRouteProp = RouteProp<
 	'Create'
 >;
 
+export type CommentsRouteProp = RouteProp<RootNavigatorParamList, 'Comments'>;
+
 export type MyProfileNavigationProp = BottomTabNavigationProp<
 	BottomTabNavigatorParamList,
 	'MyProfile'
