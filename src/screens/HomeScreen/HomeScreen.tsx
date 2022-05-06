@@ -18,11 +18,17 @@ import ApiErrorMessage from '../../components/ApiErrorMessage';
 
 const HomeScreen = () => {
 	const [activePostId, setActivePostId] = useState<string | null>(null);
-	const { data, loading, error, refetch } = useQuery<
+	const [isFetchingMore, setIsFetchingMore] = useState(false);
+
+	const { data, loading, error, refetch, fetchMore } = useQuery<
 		PostsByDateQuery,
 		PostsByDateQueryVariables
 	>(postsByDate, {
-		variables: { type: 'POST', sortDirection: ModelSortDirection.DESC },
+		variables: {
+			type: 'POST',
+			sortDirection: ModelSortDirection.DESC,
+			limit: 2,
+		},
 	});
 
 	const viewabilityConfig: ViewabilityConfig = {
@@ -52,6 +58,18 @@ const HomeScreen = () => {
 		(post) => !post?._deleted,
 	);
 
+	const nextToken = data?.postsByDate?.nextToken;
+
+	const loadMore = async () => {
+		if (!nextToken || isFetchingMore) {
+			return;
+		}
+
+		setIsFetchingMore(true);
+		await fetchMore({ variables: { nextToken } });
+		setIsFetchingMore(false);
+	};
+
 	return (
 		<View>
 			<FlatList
@@ -60,11 +78,12 @@ const HomeScreen = () => {
 					item && <FeedPost isVisible={activePostId === item.id} post={item} />
 				}
 				showsVerticalScrollIndicator={false}
-				// keyExtractor={(item, index) => `post-${index}`}
+				keyExtractor={(item, index) => `post-${index}`}
 				viewabilityConfig={viewabilityConfig}
 				onViewableItemsChanged={onViewableItemsChanged.current}
 				onRefresh={() => refetch()}
 				refreshing={loading}
+				onEndReached={loadMore}
 			/>
 		</View>
 	);

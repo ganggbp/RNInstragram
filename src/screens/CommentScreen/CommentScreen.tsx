@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { useRoute } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import {
 	CommentsByPostQuery,
@@ -16,16 +16,33 @@ import { commentsByPost } from './queries';
 const CommentScreen = () => {
 	const route = useRoute<CommentsRouteProp>();
 	const { postId } = route.params;
-	const { data, loading, error } = useQuery<
+
+	const { data, loading, error, fetchMore } = useQuery<
 		CommentsByPostQuery,
 		CommentsByPostQueryVariables
 	>(commentsByPost, {
-		variables: { postID: postId, sortDirection: ModelSortDirection.DESC },
+		variables: {
+			postID: postId,
+			sortDirection: ModelSortDirection.DESC,
+			limit: 20,
+		},
 	});
+	const [isFetchingMore, setIsFetchingMore] = useState(false);
 
 	const comments = data?.commentsByPost?.items.filter(
 		(comment) => !comment?._deleted,
 	);
+
+	const nextToken = data?.commentsByPost?.nextToken;
+
+	const loadMore = async () => {
+		if (!nextToken || isFetchingMore) {
+			return;
+		}
+		setIsFetchingMore(true);
+		await fetchMore({ variables: { nextToken } });
+		setIsFetchingMore(false);
+	};
 
 	if (loading) {
 		return <ActivityIndicator />;
@@ -47,11 +64,12 @@ const CommentScreen = () => {
 				renderItem={({ item, index }) => (
 					<Comment comment={item} includeDetails />
 				)}
-				style={{ padding: 10 }}
+				contentContainerStyle={{ padding: 10 }}
 				inverted
 				ListEmptyComponent={() => (
 					<Text>No comments. Be the first comment</Text>
 				)}
+				onEndReached={loadMore}
 			/>
 			<Input postId={postId} />
 		</View>

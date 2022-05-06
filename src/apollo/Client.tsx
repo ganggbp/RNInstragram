@@ -8,6 +8,7 @@ import {
 
 import { AuthOptions, createAuthLink, AUTH_TYPE } from 'aws-appsync-auth-link';
 import { createSubscriptionHandshakeLink } from 'aws-appsync-subscription-link';
+import { TypePolicies } from '@apollo/client/cache';
 
 import awsconfig from '../aws-exports';
 
@@ -31,9 +32,34 @@ const link = ApolloLink.from([
 	createSubscriptionHandshakeLink({ url, region, auth }, httpLink), //link of what protocol to communicate
 ]);
 
+//typePolicies function that specified how we should merit object in our cache
+
+const mergeList = (existing = { items: [] }, incoming = { items: [] }) => {
+	return {
+		...existing,
+		...incoming,
+		items: [...(existing.items || []), ...incoming.items],
+	};
+};
+
+const typePolicies: TypePolicies = {
+	Query: {
+		fields: {
+			commentsByPost: {
+				keyArgs: ['postID', 'createdAt', 'sortDirection', 'filter'],
+				merge: mergeList,
+			},
+			postsByDate: {
+				keyArgs: ['type', 'createdAt', 'sortDirection', 'filter'],
+				merge: mergeList,
+			},
+		},
+	},
+};
+
 export const client = new ApolloClient({
 	link,
-	cache: new InMemoryCache(), //responsible to all the data locally on device memory, storage
+	cache: new InMemoryCache({ typePolicies }), //responsible to all the data locally on device memory, storage
 });
 
 const Client = ({ children }: IClient) => {

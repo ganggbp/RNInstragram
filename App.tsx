@@ -8,8 +8,9 @@ import InAppBrowser from 'react-native-inappbrowser-reborn';
 import AuthContextProvider from './src/context/AuthContext';
 import Client from './src/apollo/Client';
 import { MenuProvider } from 'react-native-popup-menu';
+import * as dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-
+dayjs.extend(relativeTime);
 // in case that have to config Amplify
 
 const urlOpener = async (url: string, redirectUrl: string) => {
