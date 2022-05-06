@@ -19,6 +19,7 @@ import {
 import { useAuthContext } from '../../context/AuthContext';
 import { useNavigation } from '@react-navigation/native';
 import { FeedNavigationProp } from '../../types/navigation';
+import { Storage } from 'aws-amplify';
 
 interface IPostMenu {
 	post: Post;
@@ -52,6 +53,16 @@ const PostMenu = ({ post }: IPostMenu) => {
 	};
 
 	const startDeletingPost = async () => {
+		if (post.image) {
+			await Storage.remove(post.image);
+		}
+		if (post.video) {
+			await Storage.remove(post.video);
+		}
+		if (post.images) {
+			await Promise.all(post.images.map((img) => Storage.remove(img)));
+		}
+
 		try {
 			await doDeletePost();
 		} catch (e) {

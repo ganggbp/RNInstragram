@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -19,6 +19,8 @@ import PostMenu from './PostMenu';
 import useLikeService from '@services/LikeService';
 import dayjs from 'dayjs';
 import Content from './Content';
+import { Storage } from 'aws-amplify';
+import UserImage from '../UserImage';
 
 interface IFeedPost {
 	post: Post;
@@ -28,12 +30,19 @@ interface IFeedPost {
 const FeedPost = (props: IFeedPost) => {
 	const { post, isVisible = false } = props;
 	const { isLiked, toggleLike } = useLikeService(post);
+	const [imageUri, setImageUri] = useState<string | null>(null);
 
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
 	const postLikes = post.Likes?.items.filter((like) => !like?._deleted) || [];
 
 	const navigation = useNavigation<FeedNavigationProp>();
+
+	useEffect(() => {
+		if (post?.User?.image) {
+			Storage.get(post?.User?.image).then(setImageUri);
+		}
+	}, [post]);
 
 	const navigateToUser = () => {
 		if (post.User) {
@@ -60,12 +69,7 @@ const FeedPost = (props: IFeedPost) => {
 			{/* Header */}
 
 			<View style={styles.header}>
-				<Image
-					source={{
-						uri: post.User?.image || DEFAULT_USER_IMAGE,
-					}}
-					style={styles.userAvatar}
-				/>
+				<UserImage imageKey={post?.User?.image || undefined} />
 				<Text onPress={navigateToUser} style={styles.userName}>
 					{post.User?.username}
 				</Text>

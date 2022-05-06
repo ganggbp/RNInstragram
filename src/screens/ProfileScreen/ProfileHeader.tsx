@@ -1,34 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { ProfileNavigatorParamList } from '../../types/navigation';
-import { Auth } from 'aws-amplify';
+import { Auth, Storage } from 'aws-amplify';
 
 import Button from '../../components/Button';
 import styles from './styles';
 import { User } from '../../API';
 import { DEFAULT_USER_IMAGE } from '../../config';
 import { useAuthContext } from '../../context/AuthContext';
+import UserImage from '../../components/UserImage';
 
 interface IProfileHeader {
 	user: User;
 }
 
 const ProfileHeader = ({ user }: IProfileHeader) => {
+	const [imageUri, setImageUri] = useState<string | null>(null);
 	const navigation = useNavigation<ProfileNavigatorParamList>();
 	const { userId } = useAuthContext();
 
 	navigation.setOptions({ title: user?.username || 'Profile' });
 
+	useEffect(() => {
+		if (user.image) {
+			Storage.get(user.image).then(setImageUri);
+		}
+	}, [user]);
+
 	return (
 		<View style={styles.root}>
 			<View style={styles.headerRow}>
 				{/* Profile image */}
-				<Image
-					source={{ uri: user.image || DEFAULT_USER_IMAGE }}
-					style={styles.avatar}
-				/>
+				<UserImage imageKey={user.image || undefined} width={100} />
 
 				{/* Posts, follower, following number */}
 				<View style={styles.numberContainer}>
