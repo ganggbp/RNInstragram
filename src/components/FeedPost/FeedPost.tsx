@@ -11,8 +11,6 @@ import { FeedNavigationProp } from '../../types/navigation';
 import colors from '../../theme/colors';
 import Comment from '../Comment';
 import DoublePressable from '../DoublePressable';
-import Carousel from '../Carousel';
-import VideoPlayer from '../VideoPlayer';
 
 import styles from './styles';
 import { Post } from '../../API';
@@ -20,6 +18,7 @@ import { DEFAULT_USER_IMAGE } from '../../config';
 import PostMenu from './PostMenu';
 import useLikeService from '@services/LikeService';
 import dayjs from 'dayjs';
+import Content from './Content';
 
 interface IFeedPost {
 	post: Post;
@@ -56,28 +55,6 @@ const FeedPost = (props: IFeedPost) => {
 		setIsDescriptionExpanded((prev) => !prev);
 	};
 
-	let content = null;
-	if (post.image) {
-		content = (
-			<DoublePressable onDoublePress={toggleLike}>
-				<Image
-					source={{
-						uri: post.image,
-					}}
-					style={styles.image}
-				/>
-			</DoublePressable>
-		);
-	} else if (post.images) {
-		content = <Carousel images={post.images} onDoublePress={toggleLike} />;
-	} else if (post.video) {
-		content = (
-			<DoublePressable onDoublePress={toggleLike}>
-				<VideoPlayer uri={post.video} paused={!isVisible} />
-			</DoublePressable>
-		);
-	}
-
 	return (
 		<View style={styles.post}>
 			{/* Header */}
@@ -95,7 +72,9 @@ const FeedPost = (props: IFeedPost) => {
 				<PostMenu post={post} />
 			</View>
 			{/* Content */}
-			{content}
+			<DoublePressable onDoublePress={toggleLike}>
+				<Content post={post} isVisible={isVisible} />
+			</DoublePressable>
 
 			{/* Footer */}
 			<View style={styles.footer}>

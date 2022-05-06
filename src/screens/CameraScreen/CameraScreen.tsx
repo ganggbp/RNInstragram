@@ -13,6 +13,7 @@ import colors from '../../theme/colors';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { useNavigation } from '@react-navigation/native';
 import { CameraNavigationProp } from '../../types/navigation';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const flashModes = [
 	FlashMode.off,
@@ -34,6 +35,8 @@ const CameraScreen = () => {
 	const [flash, setFlash] = useState(FlashMode.off);
 	const [isCameraReady, setIsCameraReady] = useState(false);
 	const [isRecording, setIsRecording] = useState(false);
+
+	const insets = useSafeAreaInsets();
 
 	const cameraRef = useRef<Camera>(null);
 	const navigation = useNavigation<CameraNavigationProp>();
@@ -79,6 +82,9 @@ const CameraScreen = () => {
 
 		try {
 			const result = await cameraRef.current.takePictureAsync(options);
+			navigation.navigate('Create', {
+				image: result.uri,
+			});
 		} catch (err) {
 			console.log(err);
 		}
@@ -99,6 +105,10 @@ const CameraScreen = () => {
 		setIsRecording(true);
 		try {
 			const result = await cameraRef.current.recordAsync(options);
+
+			navigation.navigate('Create', {
+				video: result.uri,
+			});
 		} catch (err) {
 			console.log(err);
 		}
@@ -115,30 +125,25 @@ const CameraScreen = () => {
 
 	const openImageGallery = () => {
 		launchImageLibrary(
-			{ mediaType: 'photo', selectionLimit: 3 },
+			{ mediaType: 'mixed', selectionLimit: 3 },
 			({ didCancel, errorCode, errorMessage, assets }) => {
 				if (!didCancel && !errorCode && assets && assets.length > 0) {
+					let params: { image?: string; images?: string[]; video?: string } =
+						{};
+
 					if (assets.length === 1) {
-						navigation.navigate('Create', {
-							image: assets[0].uri,
-						});
+						const field = assets[0].type?.startsWith('video')
+							? 'video'
+							: 'image';
+						params[field] = assets[0].uri;
 					} else if (assets.length > 1) {
-						navigation.navigate('Create', {
-							images: assets.map((asset) => asset.uri as string),
-						});
+						params.images = assets.map((asset) => asset.uri) as string[];
 					}
+
+					navigation.navigate('Create', params);
 				}
 			},
 		);
-	};
-
-	const navigateToCreateScreen = () => {
-		navigation.navigate('Create', {
-			images: [
-				'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
-				'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
-			],
-		});
 	};
 
 	if (hasPermission === null) {
@@ -160,7 +165,7 @@ const CameraScreen = () => {
 				onCameraReady={() => setIsCameraReady(true)}
 			/>
 
-			<View style={[styles.buttonContainer, { top: 25 }]}>
+			<View style={[styles.buttonContainer, { top: insets.top + 25 }]}>
 				<MaterialIcons name="close" size={30} color={colors.white} />
 				<Pressable onPress={flipFlash}>
 					<MaterialIcons
@@ -196,14 +201,6 @@ const CameraScreen = () => {
 				<Pressable onPress={flipCamera}>
 					<MaterialIcons
 						name="flip-camera-ios"
-						size={30}
-						color={colors.white}
-					/>
-				</Pressable>
-
-				<Pressable onPress={navigateToCreateScreen}>
-					<MaterialIcons
-						name="arrow-forward-ios"
 						size={30}
 						color={colors.white}
 					/>
