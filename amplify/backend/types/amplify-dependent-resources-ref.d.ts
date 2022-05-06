@@ -22,7 +22,6 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "Instagram": {
-            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }

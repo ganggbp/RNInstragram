@@ -63,7 +63,7 @@ const Navigation = () => {
 			<Stack.Screen
 				name="Auth"
 				component={AuthStackNavigator}
-				options={{ title: 'Setup Profile' }}
+				options={{ title: 'Setup Profile', headerShown: false }}
 			/>
 		);
 	} else if (!userData?.username) {

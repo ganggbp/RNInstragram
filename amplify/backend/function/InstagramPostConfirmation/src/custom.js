@@ -62,6 +62,7 @@ exports.handler = async (event, context) => {
 
 	const newUser = {
 		id: sub,
+		owner: sub,
 		email,
 		name,
 		nofPosts: 0,
@@ -73,7 +74,7 @@ exports.handler = async (event, context) => {
 	if (!(await userExists(newUser.id))) {
 		// if not, save the user to database
 		await saveUser(newUser);
-		console.log(`User ${newUser.id} has been saved to database`);
+		console.log(`User ${newUser.id} has b een saved to database`);
 	} else {
 		console.log(`User ${newUser.id} already exists`);
 	}
