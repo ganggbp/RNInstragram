@@ -68,3 +68,8 @@ type User @model @auth(rules: [{ allow: public }]) {
 
 # add @index for create a global secondary index to increase performance when filter
 # when provided queryField amplify will generate this query in graphql queries
+
+type Subscription {
+	onCreateCommentByPostId(postID: ID!): Comment
+		@aws_subscribe(mutations: ["createComment"])
+}
