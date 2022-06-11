@@ -81,9 +81,10 @@ const CreatePostScreen = () => {
 		}
 
 		try {
-			await doCreatePost({
+			const data = await doCreatePost({
 				variables: { input },
 			});
+			console.log('data:>>', data);
 			setIsSubmitting(false);
 
 			navigation.popToTop();
