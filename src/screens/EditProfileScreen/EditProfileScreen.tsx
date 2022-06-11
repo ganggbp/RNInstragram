@@ -180,6 +180,7 @@ const EditProfileScreen = () => {
 	}
 
 	if (error || updateError || deleteError) {
+		console.log('error:>>', error?.message);
 		return (
 			<ApiErrorMessage
 				title="Error fetching or updating the user"
