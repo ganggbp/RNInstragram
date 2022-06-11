@@ -50,8 +50,7 @@ const saveUser = async (user) => {
 };
 
 exports.handler = async (event, context) => {
-	console.log('Hey, Lambda function is working');
-	console.log('events:>>', event);
+	console.log('Hey, Lambda function is working and is Updated');
 
 	if (!event?.request?.userAttributes) {
 		console.log('No user data available');
